@@ -1,0 +1,23 @@
+# Sexy Domain Controller
+## A chrome extension for exhibiting [Finsexy.com](https://finsexy.com) in a gallery
+- Clears localStorage and refreshes the session after 20 minutes
+- Prevents user from navigating to unauthorized websites
+- Allows user to temporarily browse designated websites before redirecting them back to finsexy
+-
+## Installation instructions:
+1. Download this repo. (Unzip if downloaded as a zip file)
+2. Go to chrome://extensions/ and toggle Developer mode on
+3. Click "Load unpacked", and select the unzipped folder
+
+## Configuration
+**Active:** Whether the extension will be active
+
+**Base Domain:** The domain that it will redirect you to. The user will be able to visit all pages and subdomains on this website
+
+**Browsable Domains:** A list of domains that the user can temporarily visit before being redirected to the base domain
+
+**Inactivity Timeout:** The session will be completely refreshed (all chats will be cleared) after this amount of time if there is no activity on the page. Any activity will reset the timer. This is set to 20 minutes by default
+
+**Confirmation Timeout:** A confirmation box will pop up before refreshing the session. By default that confirmation box will be up for 20 seconds, but you can configure that here
+
+**Browsable Domain Time Limit:** The amount of time that the user can spend clicking around the browsable domain list before being redirected back to the base domain.
