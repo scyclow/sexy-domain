@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity Monitor & Domain Controller</title>
+  <style>
+    body {
+      font-family: monospace;
+      width: 320px;
+      padding: 15px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sexy Domain Controller</h1>
+
+  <div class="form-group">
+    <label class="switch" style="display: flex; align-items: center; cursor: pointer;">
+      <span class="slider">Active:</span>
+      <input type="checkbox" id="is-active" style="width: initial;">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label for="base-domain">Base Domain:</label>
+    <input type="text" id="base-domain" placeholder="https://example.com">
+    <div class="note">Users will be redirected here when needed</div>
+  </div>
+
+  <div class="form-group">
+    <label for="browsable-domains">Browsable Domains:</label>
+    <textarea id="browsable-domains" rows="4" placeholder="Enter domains, one per line:&#10;google.com&#10;github.com"></textarea>
+    <div class="note">Users can browse these domains for a limited time</div>
+  </div>
+
+  <div class="form-group">
+    <label for="inactivity-timeout">Inactivity Timeout (seconds):</label>
+    <input type="number" id="inactivity-timeout" min="1" value="10">
+  </div>
+
+  <div class="form-group">
+    <label for="confirmation-timeout">Confirmation Timeout (seconds):</label>
+    <input type="number" id="confirmation-timeout" min="5" value="20">
+  </div>
+
+  <div class="form-group">
+    <label for="redirect-warning">Browsable Domain Time Limit (seconds):</label>
+    <input type="number" id="redirect-warning" min="1" value="3">
+  </div>
+
+
+  <button id="save-button">Save Configuration</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
