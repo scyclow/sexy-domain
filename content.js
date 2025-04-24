@@ -15,7 +15,6 @@ let confirmationTimer = null;
 
 chrome.storage.sync.get('config', (data) => {
   if (data.config) {
-    console.log('set config')
     config = data.config
   }
 
@@ -35,7 +34,6 @@ function listenForInactivity() {
 let inactivityTimer
 function resetInactivityTimer() {
   if (!config.ACTIVE) return
-  // console.log('reset activity timer')
   lastActivityTime = Date.now();
 
   if (inactivityTimer) {
@@ -56,7 +54,6 @@ function resetInactivityTimer() {
 function checkInactivity() {
   if (!config.ACTIVE) return
 
-  console.log('checking active')
   const timeSinceLastActivity = Date.now() - lastActivityTime
   if (timeSinceLastActivity >= config.INACTIVITY_TIMEOUT) {
     showRefreshConfirmationDialog()
@@ -73,7 +70,6 @@ function refreshSession() {
 
   if (!document.hidden) localStorage.clear();
   location.reload()
-  console.log('Local storage cleared due to inactivity');
 }
 
 
@@ -87,7 +83,6 @@ function refreshSession() {
 function showRefreshConfirmationDialog() {
   if (!config.ACTIVE) return
 
-  console.log('confirmation box')
   // Remove any existing confirmation dialog
   const existingDialog = $.id('activity-confirmation-dialog');
   if (existingDialog) {

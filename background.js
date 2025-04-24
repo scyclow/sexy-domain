@@ -39,7 +39,6 @@ chrome.storage.sync.get('config', (data) => {
 
 // Handle tab updates
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  console.log('tab update')
   if (changeInfo.url) {
     handleUrlChange(tabId, changeInfo.url);
   }
@@ -61,7 +60,7 @@ function handleUrlChange(tabId, url) {
     if (data.config) {
       config = data.config
     }
-    console.log('url change')
+
     if (!config || !config.ACTIVE) return
     else if (url.includes(config.BASE_DOMAIN)) {
       startedBrowse = null
