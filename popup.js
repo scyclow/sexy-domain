@@ -19,7 +19,7 @@ const DEFAULT_CONFIG = {
   ],
   INACTIVITY_TIMEOUT: 20 * 60 * 1000, // 20 minutes in milliseconds
   CONFIRMATION_TIMEOUT: 20 * 1000,    // 20 seconds in milliseconds
-  BROWSABLE_REDIRECT_WARNING: 3 * 60 * 1000, // 3 minutes in milliseconds
+  BROWSABLE_REDIRECT: 3 * 60 * 1000, // 3 minutes in milliseconds
   ACTIVE: true
 }
 
